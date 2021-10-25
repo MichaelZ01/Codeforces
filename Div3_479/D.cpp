@@ -19,6 +19,8 @@ set<ll> midNums;
 ll ans[105];
 map<ll,ll> nextNum;
 
+ll last;
+
 int main() {
     cin.tie(nullptr); cin.sync_with_stdio(false);
 
@@ -39,20 +41,15 @@ int main() {
             nextNum[num] = num * 2;
             midNums.insert(num * 2);
         } 
-    }
 
-    for(auto num : nums) {
-        if(midNums.count(num) == 0) {
-            for(int i = 0; i < n; ++ i ){
-                ans[i] = num;
-                num = nextNum[num];
-            }
-            break;
+        if(nums.count(num * 3) == 0 and (nums.count(num / 2) == 0 or num % 2 != 0)) {
+            last = num;
         }
     }
 
-    for(int i = 0; i < n; ++i) {
-        cout << ans[i] << " ";
+    for(int i = 0; i < n; ++ i ){
+        cout << last << " ";
+        last = nextNum[last];
     }
 
     cout << '\n';
