@@ -4,6 +4,7 @@
 # Except gitignore and c++ files
 !.gitignore
 !*.cpp
+!*.md
 !*/
 
 
