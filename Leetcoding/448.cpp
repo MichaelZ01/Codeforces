@@ -39,4 +39,24 @@ the value has been seen.
 You can then loop over the boolean array to find which values are 
 missing (positive)
 */
+class Solution2 {
+public:
+    vector<int> findDisappearedNumbers(vector<int>& nums) {
+        auto res = vector<int>();
+        
+        for(int i = 0 ; i < nums.size(); ++i) {
+            if(nums[abs(nums[i])-1] > 0){ 
+                nums[abs(nums[i]) - 1] *= -1; 
+            }
+        }
+        
+        for(int i = 0; i < nums.size(); ++i) {
+            if(nums[i] > 0) {
+                res.push_back(i+1);
+            }
+        }
+        
+        return res;
+    }
+};
 
