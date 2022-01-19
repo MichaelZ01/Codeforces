@@ -9,6 +9,8 @@ using namespace std;
 
 /*
 Similar quesiton to 268, except this time there are multiple missing.
+
+Similar quesiton to 287 as well
 */
 
 class Solution {
